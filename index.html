@@ -1,0 +1,39 @@
+# Delete-Modal-Pop-up
+
+<!-- Delete Button -->
+<td><a onclick="DeletePOP('{% url 'invoice:delete-category' i.id %}')"><i class="fa fa-trash" aria-hidden="true" style="color: red; text-align: center;"></i></a></td>
+
+
+
+<!-- Delete Modal Pop up -->
+<div class="modal fade" id="formConfirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Delete CATEGORY</h4>
+        <button type="button" onclick="$('#formConfirm').modal('hide');" class="close" data-dismiss="modal"><span aria-hidden="true">
+        ×</span><span class="sr-only">Close</span></button>
+      </div>
+      <div class="modal-body" id="frm_body">
+        Are you sure want to delete this CATEGORY .
+      </div>
+      <div class="modal-footer">
+        <a style='margin-left:10px;' href="" type="button" class="btn btn-primary col-sm-2 pull-right" id="delete_pop">Yes</a>
+        <button type="button" class="btn btn-danger col-sm-2 pull-right" onclick="$('#formConfirm').modal('hide');
+        " data-dismiss="modal" id="frm_cancel">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End -->
+
+
+<script>
+  function DeletePOP(link)
+{
+  document.getElementById('delete_pop').href = link
+  $('#formConfirm').modal('toggle');
+
+
+}
+</script>
